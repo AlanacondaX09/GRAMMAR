@@ -1,21 +1,24 @@
 {
   "name": "GRAMMAR",
   "short_name": "GRAMMAR",
-  "start_url": "./",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#0B0B12",
   "theme_color": "#7C3AED",
   "description": "GRAMMAR - English Learning Platform",
   "icons": [
     {
-      "src": "./icon-192(1).png",
+      "src": "/icon-192(1).png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "./icon-512(1).png",
+      "src": "/icon-512(1).png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
