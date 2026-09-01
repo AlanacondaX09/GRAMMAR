@@ -9,8 +9,11 @@
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#7C3AED">
-
-    <link rel="icon" href="icons/icon-192.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GRAMMAR">
+    <link rel="icon" href="icon-192.png">
 </head>
 
 <body>
@@ -21,7 +24,9 @@
     <script>
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register("sw.js");
-        }
+            then(() => console.log("GRAMMAR PWA Ready"))
+            .catch(error => console.error("PWA Error:", error));
+        });
     </script>
 
 </body>
