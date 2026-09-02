@@ -28,7 +28,11 @@ body {
 
     z-index: 9999;
 
-    transition: opacity 1s ease;
+    transition: opacity 0.5s ease;
+}
+
+#splash.hide {
+    opacity: 0;
 }
 
 
@@ -258,7 +262,7 @@ h1 span {
    BUTTON
 ===================== */
 
-
+button,
 .button {
     border: none;
 
@@ -284,7 +288,8 @@ h1 span {
 }
 
 
-button:hover {
+button:hover,
+.button:hover {
     transform: scale(1.05);
 
     box-shadow:
