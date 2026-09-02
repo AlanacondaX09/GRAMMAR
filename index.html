@@ -150,6 +150,19 @@
         }
 
     </script>
+    <script>
+    const splash = document.querySelector(".splash");
+
+    if (sessionStorage.getItem("appStarted")) {
+        splash.remove();
+    } else {
+        sessionStorage.setItem("appStarted", "true");
+
+        setTimeout(() => {
+            splash.classList.add("hide");
+        }, 3000);
+    }
+</script>
 
 </body>
 
