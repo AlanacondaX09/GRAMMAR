@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GRAMMAR | Settings</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+
+        <h2>GRAMMAR</h2>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="lessons.html">Lessons</a>
+            <a href="exercises.html">Exercises</a>
+            <a href="settings.html" class="active">Settings</a>
+        </div>
+
+    </nav>
+
+
+    <!-- SETTINGS -->
+
+    <main class="settings-page">
+
+        <div class="settings-header">
+
+            <span class="settings-icon">⚙</span>
+
+            <h1 data-i18n="settings">Settings</h1>
+
+            <p data-i18n="settingsDesc">
+                Customize your GRAMMAR experience
+            </p>
+
+        </div>
+
+
+        <!-- SOUND -->
+
+        <section class="settings-card">
+
+            <div class="settings-card-title">
+
+                <div class="settings-title-icon">
+                    🔊
+                </div>
+
+                <div>
+                    <h2 data-i18n="sound">Sound</h2>
+
+                    <p data-i18n="soundDesc">
+                        Control sounds and volume
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="setting-row">
+
+                <div>
+                    <h3 data-i18n="soundEffects">
+                        Sound Effects
+                    </h3>
+
+                    <p data-i18n="soundEffectsDesc">
+                        Play sounds when you interact with the app
+                    </p>
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="soundToggle"
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+            <div class="setting-row volume-row">
+
+                <div>
+
+                    <h3 data-i18n="volume">
+                        Volume
+                    </h3>
+
+                    <p data-i18n="volumeDesc">
+                        Adjust sound effects volume
+                    </p>
+
+                </div>
+
+                <div class="volume-control">
+
+                    <span>🔈</span>
+
+                    <input
+                        type="range"
+                        id="volumeControl"
+                        min="0"
+                        max="1"
+                        step="0.05"
+                    >
+
+                    <span>🔊</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- LANGUAGE -->
+
+        <section class="settings-card">
+
+            <div class="settings-card-title">
+
+                <div class="settings-title-icon">
+                    🌐
+                </div>
+
+                <div>
+
+                    <h2 data-i18n="language">
+                        Language
+                    </h2>
+
+                    <p data-i18n="languageDesc">
+                        Choose your preferred language
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="language-options">
+
+                <label class="language-option">
+
+                    <input
+                        type="radio"
+                        name="language"
+                        value="system"
+                    >
+
+                    <div class="language-info">
+
+                        <span class="language-flag">
+                            📱
+                        </span>
+
+                        <div>
+
+                            <strong data-i18n="systemDefault">
+                                System Default
+                            </strong>
+
+                            <small data-i18n="systemDesc">
+                                Use your device language
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <span class="radio-circle"></span>
+
+                </label>
+
+
+                <label class="language-option">
+
+                    <input
+                        type="radio"
+                        name="language"
+                        value="en"
+                    >
+
+                    <div class="language-info">
+
+                        <span class="language-flag">
+                            🇬🇧
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                English
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <span class="radio-circle"></span>
+
+                </label>
+
+
+                <label class="language-option">
+
+                    <input
+                        type="radio"
+                        name="language"
+                        value="ar"
+                    >
+
+                    <div class="language-info">
+
+                        <span class="language-flag">
+                            🇪🇬
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                العربية
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <span class="radio-circle"></span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- APPEARANCE -->
+
+        <section class="settings-card">
+
+            <div class="settings-card-title">
+
+                <div class="settings-title-icon">
+                    🎨
+                </div>
+
+                <div>
+
+                    <h2 data-i18n="appearance">
+                        Appearance
+                    </h2>
+
+                    <p data-i18n="appearanceDesc">
+                        Choose how GRAMMAR looks
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="theme-options">
+
+                <button
+                    class="theme-option"
+                    data-theme="system"
+                >
+
+                    <span>📱</span>
+
+                    <strong data-i18n="systemDefault">
+                        System
+                    </strong>
+
+                </button>
+
+
+                <button
+                    class="theme-option"
+                    data-theme="light"
+                >
+
+                    <span>☀️</span>
+
+                    <strong data-i18n="light">
+                        Light
+                    </strong>
+
+                </button>
+
+
+                <button
+                    class="theme-option"
+                    data-theme="dark"
+                >
+
+                    <span>🌙</span>
+
+                    <strong data-i18n="dark">
+                        Dark
+                    </strong>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ABOUT -->
+
+        <section class="settings-card about-settings">
+
+            <div class="settings-card-title">
+
+                <div class="settings-title-icon">
+                    ℹ️
+                </div>
+
+                <div>
+
+                    <h2 data-i18n="about">
+                        About GRAMMAR
+                    </h2>
+
+                    <p>
+                        GRAMMAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="app-info">
+
+                <span data-i18n="version">
+                    Version
+                </span>
+
+                <strong>
+                    1.0.0
+                </strong>
+
+            </div>
+
+
+            <div class="app-info">
+
+                <span data-i18n="madeWith">
+                    Made with ❤️
+                </span>
+
+                <strong>
+                    GRAMMAR
+                </strong>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
