@@ -306,16 +306,26 @@ button:hover,
     nav {
         height: auto;
         min-height: 60px;
-        padding: 12px 8px;
-        gap: 8px;
+        padding: 10px 6px;
+        gap: 5px;
         flex-wrap: nowrap;
     }
 
 
     nav h2 {
-        font-size: 16px;
+        font-size: 15px;
         letter-spacing: 1px;
         flex-shrink: 0;
+    }
+
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex: 1;
+        flex-wrap: nowrap;
     }
 
 
