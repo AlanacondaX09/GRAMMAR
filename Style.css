@@ -360,4 +360,6 @@ button:hover,
     font-size: 20px;
     background: transparent;
     color: white;
+    border: none;
+    cursor: pointer;
 }
