@@ -307,13 +307,13 @@ button:hover,
         height: auto;
         min-height: 60px;
         padding: 10px 6px;
-        gap: 5px;
+        gap: 7px;
         flex-wrap: nowrap;
     }
 
 
     nav h2 {
-        font-size: 15px;
+        font-size: 19px;
         letter-spacing: 1px;
         flex-shrink: 0;
     }
