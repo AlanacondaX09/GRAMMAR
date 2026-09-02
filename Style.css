@@ -258,7 +258,8 @@ h1 span {
    BUTTON
 ===================== */
 
-button {
+
+.button {
     border: none;
 
     padding: 15px 30px;
@@ -276,6 +277,10 @@ button {
     cursor: pointer;
 
     transition: 0.3s;
+
+    display: inline-block;
+
+    text-decoration: none;
 }
 
 
