@@ -307,25 +307,15 @@ button:hover,
         height: auto;
         min-height: 60px;
         padding: 10px 6px;
-        gap: 10px;
+        gap: 5px;
         flex-wrap: nowrap;
     }
 
 
     nav h2 {
-        font-size: 20px;
+        font-size: 15px;
         letter-spacing: 1px;
         flex-shrink: 0;
-    }
-
-
-    .nav-links {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 15px;
-        flex: 1;
-        flex-wrap: nowrap;
     }
 
 
@@ -340,7 +330,7 @@ button:hover,
 
 
     .nav-links a {
-        font-size: 10px;
+        font-size: 11px;
         white-space: nowrap;
     }
 
@@ -382,4 +372,199 @@ button:hover,
     font-size: 20px;
     background: transparent;
     color: white;
+}
+
+/* SETTINGS PAGE */
+.settings-page {
+    width: min(900px, 92%);
+    margin: 40px auto;
+}
+
+.settings-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.settings-icon {
+    font-size: 38px;
+}
+
+.settings-header h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.settings-header p,
+.settings-card p {
+    color: #aaa;
+}
+
+.settings-card {
+    background: #111118;
+    border: 1px solid #24242d;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 20px;
+}
+
+.settings-card-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.settings-title-icon {
+    font-size: 28px;
+}
+
+.settings-card-title h2 {
+    font-size: 21px;
+    margin-bottom: 4px;
+}
+
+.setting-row,
+.app-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 17px 0;
+    border-top: 1px solid #252530;
+}
+
+.setting-row h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.setting-row p {
+    font-size: 13px;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 180px;
+}
+
+.volume-control input {
+    accent-color: #39b54a;
+    width: 130px;
+}
+
+.language-options,
+.theme-options {
+    display: grid;
+    gap: 10px;
+}
+
+.language-option,
+.theme-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 14px;
+    color: white;
+    background: #181820;
+    border: 1px solid #292936;
+    border-radius: 12px;
+}
+
+.language-option {
+    cursor: pointer;
+}
+
+.language-option input {
+    display: none;
+}
+
+.language-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.language-info small {
+    display: block;
+    color: #999;
+    margin-top: 4px;
+}
+
+.theme-options {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.theme-option {
+    justify-content: center;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.theme-option:hover,
+.language-option:hover {
+    border-color: #39b54a;
+    background: #1d1d27;
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 10px 8px;
+        min-height: 60px;
+        gap: 6px;
+    }
+
+    nav h2 {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .settings-page {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    .settings-header h1 {
+        font-size: 30px;
+    }
+
+    .settings-card {
+        padding: 16px;
+        border-radius: 13px;
+    }
+
+    .setting-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .volume-control {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .volume-control input {
+        width: 100%;
+    }
+
+    .theme-options {
+        grid-template-columns: 1fr;
+    }
+
+    .app-info {
+        font-size: 14px;
+    }
 }
