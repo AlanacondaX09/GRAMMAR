@@ -354,3 +354,10 @@ button:hover,
     }
 
 }
+
+.sound-toggle {
+    padding: 8px 12px;
+    font-size: 20px;
+    background: transparent;
+    color: white;
+}
