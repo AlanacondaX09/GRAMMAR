@@ -1,19 +1,23 @@
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", () => {
+    const splash = document.getElementById("splash");
+    const main = document.getElementById("main");
 
-    setTimeout(function () {
+    if (!splash || !main) return;
 
-        const splash = document.getElementById("splash");
-        const main = document.getElementById("main");
+    if (sessionStorage.getItem("splashShown")) {
+        splash.style.display = "none";
+        main.style.display = "block";
+        return;
+    }
 
-        splash.style.opacity = "0";
+    sessionStorage.setItem("splashShown", "true");
 
-        setTimeout(function () {
+    setTimeout(() => {
+        splash.classList.add("hide");
 
+        setTimeout(() => {
             splash.style.display = "none";
             main.style.display = "block";
-
-        }, 1000);
-
-    }, 3000);
-
-});
+        }, 500);
+    }, 2000);
+});;
