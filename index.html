@@ -1,1 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Alanaconda.GRAMMAR</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Style.css">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- PWA Theme -->
+    <meta name="theme-color" content="#7C3AED">
+
+    <!-- Mobile PWA -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent">
+    <meta name="apple-mobile-web-app-title"
+          content="GRAMMAR">
+
+    <!-- App Icon -->
+    <link rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="./icons/icon-192(1).png">
+
+    <link rel="apple-touch-icon"
+          href="./icons/icon-192(1).png">
+</head>
+
+<body>
+
+    <!-- ================= SPLASH SCREEN ================= -->
+
+    <div id="splash">
+
+        <div class="GRAMMAR.LOGO">
+            GRAMMAR
+        </div>
+
+        <div class="loader"></div>
+
+        <h1>Alanaconda.GRAMMAR</h1>
+
+        <p>Loading...</p>
+
+    </div>
+
+
+    <!-- ================= MAIN WEBSITE ================= -->
+
+    <div id="main">
+
+        <!-- NAVBAR -->
+
+        <nav>
+
+            <h2>GRAMMAR</h2>
+
+            <div class="nav-links">
+
+                <a href="#">Home</a>
+
+                <a href="#">Lessons</a>
+
+                <a href="#">Exercises</a>
+
+                <a href="#">About me</a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- HERO SECTION -->
+
+        <section class="hero">
+
+            <div>
+
+                <p class="small">
+                    WELCOME TO
+                </p>
+
+                <h1>
+                    Learn Grammar.<br>
+                    <span>Master English.</span>
+                </h1>
+
+                <p class="description">
+                    Improve your English grammar with simple
+                    lessons and smart exercises.
+                </p>
+
+                <button>
+                    Start Learning
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="./script.js"></script>
+
+
+    <!-- PWA Service Worker -->
+    <script>
+
+        if ("serviceWorker" in navigator) {
+
+            window.addEventListener("load", () => {
+
+                navigator.serviceWorker
+                    .register("./sw.js")
+
+                    .then((registration) => {
+
+                        console.log(
+                            "GRAMMAR PWA Ready 🚀",
+                            registration
+                        );
+
+                    })
+
+                    .catch((error) => {
+
+                        console.error(
+                            "GRAMMAR PWA Error:",
+                            error
+                        );
+
+                    });
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
