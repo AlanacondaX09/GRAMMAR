@@ -305,21 +305,33 @@ button:hover,
 
     nav {
         height: auto;
+        min-height: 60px;
+        padding: 12px 8px;
+        gap: 8px;
+        flex-wrap: nowrap;
+    }
 
-        padding: 20px 6%;
 
-        flex-direction: column;
-
-        gap: 20px;
+    nav h2 {
+        font-size: 16px;
+        letter-spacing: 1px;
+        flex-shrink: 0;
     }
 
 
     .nav-links {
-        gap: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex: 1;
+        flex-wrap: nowrap;
+    }
 
-        flex-wrap: wrap;
 
-        justify-content: center;
+    .nav-links a {
+        font-size: 10px;
+        white-space: nowrap;
     }
 
 
@@ -360,6 +372,4 @@ button:hover,
     font-size: 20px;
     background: transparent;
     color: white;
-    border: none;
-    cursor: pointer;
 }
