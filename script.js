@@ -164,13 +164,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const main = document.getElementById("main");
 
     if (splash && main) {
-        setTimeout(() => {
-            splash.classList.add("hide");
+        const splashShown = sessionStorage.getItem("splashShown");
+
+        if (splashShown) {
+            splash.style.display = "none";
             main.style.display = "block";
+        } else {
+            sessionStorage.setItem("splashShown", "true");
 
             setTimeout(() => {
-                splash.style.display = "none";
-            }, 500);
-        }, 1200);
+                splash.classList.add("hide");
+                main.style.display = "block";
+
+                setTimeout(() => {
+                    splash.style.display = "none";
+                }, 500);
+            }, 1200);
+        }
     }
 });
