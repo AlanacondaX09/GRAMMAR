@@ -670,3 +670,24 @@ button:hover,
         font-size: 15px;
     }
 }
+
+nav h2,
+.main-navbar h2 {
+    color: #39b54a !important;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.nav-links a,
+.main-navbar .nav-links a {
+    color: #ffffff !important;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links a:hover,
+.main-navbar .nav-links a:hover {
+    color: #39b54a !important;
+}
