@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     dark: "Dark",
                     about: "About GRAMMAR",
                     version: "Version",
-                    madeWith: "Made with ❤️"
+                    madeWith: "Made with AlanacondaX09 ❤️"
                 },
                 ar: {
                     settings: "الإعدادات",
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     dark: "داكن",
                     about: "عن GRAMMAR",
                     version: "الإصدار",
-                    madeWith: "صُنع بـ ❤️"
+                    madeWith: "صُنع بـ AlanacondaX09 ❤️"
                 }
             };
 
