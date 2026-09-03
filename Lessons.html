@@ -2,42 +2,76 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>GRAMMAR | Lessons</title>
 
     <link rel="stylesheet" href="Style.css">
+
 </head>
+
 
 <body>
 
-    <nav>
-        <h2>GRAMMAR</h2>
 
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="lessons.html">Lessons</a>
-            <a href="exercises.html">Exercises</a>
-            <a href="about.html">About me</a>
-        </div>
-    </nav>
+<!-- ================= NAVBAR ================= -->
 
-    <main>
+<nav class="main-navbar">
+    <h2>GRAMMAR</h2>
 
-        <section class="lessons-header">
-            <h1>GRAMMAR LESSONS</h1>
-            <p>Choose a lesson and start learning.</p>
-        </section>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="Lessons.html" class="active">Lessons</a>
+        <a href="Exercises.html">Exercises</a>
+        <a href="about.html">About me</a>
+        <a href="Settings.html">Settings ⚙</a>
+    </div>
+</nav>
 
-        <section class="lessons-container">
 
-            <!-- Lesson cards will be added here -->
 
-        </section>
+<!-- ================= LESSONS ================= -->
 
-    </main>
+<main class="lessons-page">
+    <header class="lessons-header">
+        <h1>
+            English Grammar
+        </h1>
+        <p class="lessons-description">
+            Learn grammar step by step with simple
+            explanations and examples.
+        </p>
 
+    </header>
+
+
+
+    <!-- LESSON CARDS -->
+
+    <section
+        id="lessonsContainer"
+        class="lessons-container"
+    ></section>
+
+
+
+    <!-- LESSON CONTENT -->
+
+    <section
+        id="lessonContent"
+        class="lesson-content"
+    ></section>
+
+
+</main>
+<script src="script.js"></script>
+<script src="lessons.js"></script>
 </body>
 
 </html>
