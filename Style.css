@@ -1,15 +1,68 @@
+:root {
+    --background: #08080d;
+    --text: white;
+    --card: #111118;
+    --border: #24242d;
+    --muted: #aaa;
+}
+
+html[data-theme="light"] {
+    --background: #f5f7fb;
+    --text: #171717;
+    --card: white;
+    --border: #ddddE5;
+    --muted: #666;
+}
+
+html[data-theme="dark"] {
+    --background: #08080d;
+    --text: white;
+    --card: #111118;
+    --border: #24242d;
+    --muted: #aaa;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav {
+    border-bottom-color: var(--border);
+}
+
+.nav-links a {
+    color: var(--text);
+}
+
+.settings-card {
+    background: var(--card);
+    border-color: var(--border);
+}
+
+.settings-card p,
+.settings-header p {
+    color: var(--muted);
+}
+
+.language-option,
+.theme-option {
+    color: var(--text);
+    background: var(--card);
+    border-color: var(--border);
+}
+
+.theme-option.selected {
+    border-color: #39b54a;
+    box-shadow: 0 0 0 2px rgba(57, 181, 74, 0.25);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-body {
-    background: #08080d;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
 
 /* =====================
    SPLASH SCREEN
@@ -566,5 +619,54 @@ button:hover,
 
     .app-info {
         font-size: 14px;
+    }
+}
+
+.main-navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 22px 30px;
+    text-align: center;
+}
+
+.main-navbar h2 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #7c3aed;
+}
+
+.main-navbar .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.main-navbar .nav-links a {
+    color: #222;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.main-navbar .nav-links a:hover {
+    color: #7c3aed;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .main-navbar .nav-links {
+        gap: 14px;
+    }
+
+    .main-navbar .nav-links a {
+        font-size: 15px;
     }
 }
