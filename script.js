@@ -1,15 +1,18 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const soundToggle = document.getElementById("soundToggle");
-    const volumeControl = document.getElementById("volumeControl");
-    const themeButtons = document.querySelectorAll(".theme-option");
-    const languageInputs = document.querySelectorAll('input[name="language"]');
+let audioContext;
 
-    let audioContext;
+async function playSound(frequency = 600) {
+    if (localStorage.getItem("sound") !== "on") return;
 
-    function playSound(frequency = 600) {
-        if (localStorage.getItem("sound") !== "on") return;
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
 
-        audioContext ??= new (window.AudioContext || window.webkitAudioContext)();
+    if (!AudioContext) return;
+
+    audioContext ??= new AudioContext();
+
+    try {
+        if (audioContext.state === "suspended") {
+            await audioContext.resume();
+        }
 
         const oscillator = audioContext.createOscillator();
         const gain = audioContext.createGain();
@@ -27,7 +30,18 @@ document.addEventListener("DOMContentLoaded", () => {
             audioContext.currentTime + 0.12
         );
         oscillator.stop(audioContext.currentTime + 0.12);
+    } catch (error) {
+        console.warn("Sound could not be played.", error);
     }
+}
+
+window.playSound = playSound;
+
+document.addEventListener("DOMContentLoaded", () => {
+    const soundToggle = document.getElementById("soundToggle");
+    const volumeControl = document.getElementById("volumeControl");
+    const themeButtons = document.querySelectorAll(".theme-option");
+    const languageInputs = document.querySelectorAll('input[name="language"]');
 
     function applyTheme(theme) {
         const selectedTheme =
