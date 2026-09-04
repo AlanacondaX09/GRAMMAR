@@ -891,6 +891,257 @@ nav h2,
     transform: none;
 }
 
+/* =========================================
+   EXERCISE CARDS
+========================================= */
+
+.exercises-page {
+    width: 90%;
+    max-width: 1000px;
+    margin: 70px auto;
+    padding-bottom: 80px;
+}
+
+.exercises-header {
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.exercises-header h1 {
+    margin: 10px 0;
+    font-size: 45px;
+}
+
+.exercises-description {
+    color: #999;
+    font-size: 18px;
+}
+
+.exercises-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.exercise-card {
+    position: relative;
+    display: flex;
+    min-height: 330px;
+    flex-direction: column;
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    transition: transform 0.25s, border 0.25s, box-shadow 0.25s;
+}
+
+.exercise-card:hover {
+    transform: translateY(-6px);
+    border-color: #39c052;
+    box-shadow: 0 10px 35px rgba(57, 192, 82, 0.12);
+}
+
+.exercise-card.is-hidden {
+    display: none;
+}
+
+.exercise-card.is-open {
+    grid-column: 1 / -1;
+    min-height: 0;
+    cursor: default;
+    transform: none;
+    animation: exercise-card-open 0.35s ease both;
+}
+
+.exercise-card.is-open:hover {
+    transform: none;
+}
+
+@keyframes exercise-card-open {
+    from {
+        opacity: 0.7;
+        transform: translateY(10px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.exercise-number {
+    align-self: flex-start;
+    padding: 7px 12px;
+    border-radius: 10px;
+    background: #39c052;
+    color: #000;
+    font-weight: bold;
+}
+
+.exercise-icon {
+    margin: 22px 0 10px;
+    color: #2588ff;
+    font-size: 42px;
+    line-height: 1;
+}
+
+.exercise-info h2 {
+    margin: 0 0 8px;
+    color: #39c052;
+    font-size: 24px;
+}
+
+.exercise-info p {
+    margin: 0;
+    color: #999;
+    line-height: 1.6;
+}
+
+.exercise-meta {
+    display: flex;
+    gap: 18px;
+    margin-top: auto;
+    padding: 22px 0 18px;
+    color: #ddd;
+    font-size: 14px;
+}
+
+.question-count,
+.exam-time {
+    color: #2588ff;
+}
+
+.start-exam-btn {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(57, 192, 82, 0.55);
+    border-radius: 10px;
+    background: transparent;
+    color: #39c052;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.start-exam-btn:hover {
+    background: #39c052;
+    color: #000;
+}
+
+.exam-container {
+    display: none;
+}
+
+.exam-container.is-active {
+    display: block;
+    margin-top: 10px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.exam-header,
+.exam-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.back-exam-btn,
+.previous-question-btn,
+.next-question-btn,
+.submit-exam-btn {
+    padding: 10px 14px;
+    border: 1px solid rgba(57, 192, 82, 0.55);
+    border-radius: 10px;
+    background: transparent;
+    color: #39c052;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.back-exam-btn:hover,
+.previous-question-btn:hover,
+.next-question-btn:hover,
+.submit-exam-btn:hover {
+    background: #39c052;
+    color: #000;
+}
+
+.exam-timer {
+    color: #2588ff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.exam-progress-info {
+    margin: 28px 0 8px;
+    color: #999;
+}
+
+.exam-progress {
+    width: 100%;
+    height: 8px;
+    accent-color: #39c052;
+}
+
+.exam-question h2 {
+    margin: 28px 0 20px;
+    color: #ddd;
+    font-size: 24px;
+}
+
+.answer-options {
+    display: grid;
+    gap: 12px;
+}
+
+.answer-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.answer-option:has(input:checked) {
+    border-color: #39c052;
+    color: #39c052;
+}
+
+.exam-actions {
+    justify-content: flex-end;
+    margin-top: 28px;
+}
+
+.exam-empty,
+.exam-result {
+    text-align: center;
+}
+
+.exam-empty h2,
+.exam-result h2 {
+    color: #39c052;
+}
+
+.exam-empty p,
+.exam-result p {
+    color: #999;
+}
+
+.exam-score {
+    color: #2588ff !important;
+    font-size: 38px;
+    font-weight: 700;
+}
+
 @keyframes lesson-card-open {
     from {
         opacity: 0.7;
@@ -1229,6 +1480,48 @@ nav h2,
 
         grid-template-columns:
             1fr;
+
+    }
+
+
+    .exercises-page {
+
+        width: 92%;
+
+        margin:
+            45px auto;
+
+    }
+
+
+    .exercises-header h1 {
+
+        font-size:
+            34px;
+
+    }
+
+
+    .exercises-description {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .exercises-container {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .exercise-card {
+
+        min-height:
+            300px;
 
     }
 
