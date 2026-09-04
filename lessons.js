@@ -309,6 +309,7 @@ const lessonsContainer =
 
 
 let activeCard = null;
+let activeCardMarkup = "";
 
 
 
@@ -387,21 +388,23 @@ displayLessons();
 
 function openLesson(lesson, card) {
 
-    if (activeCard === card) {
-
-        card.querySelector(".lesson-content")?.remove();
-        card.classList.remove("expanded");
-        activeCard = null;
-        return;
-
-    }
-
     if (activeCard) {
-
-        activeCard.querySelector(".lesson-content")?.remove();
-        activeCard.classList.remove("expanded");
-
+        return;
     }
+
+    activeCard = card;
+    activeCardMarkup = card.innerHTML;
+
+    card.innerHTML = "";
+    card.classList.add("is-open");
+
+    document.querySelectorAll(".lesson-card").forEach((otherCard) => {
+
+        if (otherCard !== card) {
+            otherCard.classList.add("is-hidden");
+        }
+
+    });
 
 
     const wrapper =
@@ -409,12 +412,14 @@ function openLesson(lesson, card) {
 
 
     wrapper.className =
-        "lesson-content-inner";
+        "lesson-card-content";
 
 
     wrapper.innerHTML = `
 
-        <button class="close-lesson" type="button" aria-label="Close lesson">&times;</button>
+        <button class="lesson-back" type="button">
+            &larr; Back to Lessons
+        </button>
 
         <div class="lesson-content-header">
 
@@ -457,6 +462,9 @@ function openLesson(lesson, card) {
             image.alt =
                 lesson.title;
 
+            image.addEventListener("error", () => {
+                image.src = lesson.thumbnail;
+            }, { once: true });
 
             wrapper.appendChild(image);
 
@@ -496,19 +504,20 @@ function openLesson(lesson, card) {
     });
 
 
-    const content = document.createElement("div");
-    content.className = "lesson-content";
-    content.classList.add("show");
-    content.appendChild(wrapper);
-    card.appendChild(content);
-    card.classList.add("expanded");
-    activeCard = card;
+    card.appendChild(wrapper);
 
-    content.querySelector(".close-lesson").addEventListener("click", (event) => {
+    wrapper.querySelector(".lesson-back").addEventListener("click", (event) => {
         event.stopPropagation();
-        content.remove();
-        card.classList.remove("expanded");
+
+        card.innerHTML = activeCardMarkup;
+        card.classList.remove("is-open");
+
+        document.querySelectorAll(".lesson-card").forEach((otherCard) => {
+            otherCard.classList.remove("is-hidden");
+        });
+
         activeCard = null;
+        activeCardMarkup = "";
     });
 
 }
