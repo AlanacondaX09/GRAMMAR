@@ -392,6 +392,8 @@ function openLesson(lesson, card) {
         return;
     }
 
+    window.playSound?.(600);
+
     activeCard = card;
     activeCardMarkup = card.innerHTML;
 
@@ -508,6 +510,8 @@ function openLesson(lesson, card) {
 
     wrapper.querySelector(".lesson-back").addEventListener("click", (event) => {
         event.stopPropagation();
+
+        window.playSound?.(500);
 
         card.innerHTML = activeCardMarkup;
         card.classList.remove("is-open");
