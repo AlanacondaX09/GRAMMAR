@@ -711,6 +711,13 @@ nav h2,
     cursor: pointer;
 }
 
+.lesson-card .lesson-content-image {
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    cursor: default;
+}
+
 .lesson-card h2 {
     color: #39b54a;
 }
@@ -869,7 +876,32 @@ nav h2,
 
 }
 
+.lesson-card.is-hidden {
+    display: none;
+}
 
+.lesson-card.is-open {
+    grid-column: 1 / -1;
+    cursor: default;
+    transform: none;
+    animation: lesson-card-open 0.35s ease both;
+}
+
+.lesson-card.is-open:hover {
+    transform: none;
+}
+
+@keyframes lesson-card-open {
+    from {
+        opacity: 0.7;
+        transform: translateY(10px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
 
 /* IMAGE */
 
@@ -992,7 +1024,6 @@ nav h2,
 
 }
 
-
 .lesson-content.show {
 
     display: block;
@@ -1068,14 +1099,55 @@ nav h2,
 
     max-width: 850px;
 
+    height: auto;
+
     margin:
         25px auto;
 
     border-radius:
         15px;
 
-    height: auto;
+}
 
+.lesson-card-content {
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    animation: lesson-content-reveal 0.3s ease both;
+}
+
+.lesson-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 28px;
+    padding: 10px 14px;
+    border: 1px solid rgba(57, 192, 82, 0.45);
+    border-radius: 10px;
+    background: transparent;
+    color: #39c052;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.lesson-back:hover {
+    background: #39c052;
+    color: #000;
+}
+
+@keyframes lesson-content-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -1185,6 +1257,14 @@ nav h2,
     }
 
 
+    .lesson-card-content {
+
+        padding:
+            20px;
+
+    }
+
+
     .lesson-content-header h2 {
 
         font-size:
@@ -1202,6 +1282,8 @@ nav h2,
 
 
     .lesson-content-image {
+
+        width: 100%;
 
         border-radius:
             12px;
