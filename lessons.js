@@ -308,8 +308,7 @@ const lessonsContainer =
     document.getElementById("lessonsContainer");
 
 
-const lessonContent =
-    document.getElementById("lessonContent");
+let activeCard = null;
 
 
 
@@ -366,7 +365,7 @@ function displayLessons() {
             "click",
             () => {
 
-                openLesson(lesson);
+                openLesson(lesson, card);
 
             }
         );
@@ -386,9 +385,23 @@ displayLessons();
 ========================================= */
 
 
-function openLesson(lesson) {
+function openLesson(lesson, card) {
 
-    lessonContent.innerHTML = "";
+    if (activeCard === card) {
+
+        card.querySelector(".lesson-content")?.remove();
+        card.classList.remove("expanded");
+        activeCard = null;
+        return;
+
+    }
+
+    if (activeCard) {
+
+        activeCard.querySelector(".lesson-content")?.remove();
+        activeCard.classList.remove("expanded");
+
+    }
 
 
     const wrapper =
@@ -400,6 +413,8 @@ function openLesson(lesson) {
 
 
     wrapper.innerHTML = `
+
+        <button class="close-lesson" type="button" aria-label="Close lesson">&times;</button>
 
         <div class="lesson-content-header">
 
@@ -481,22 +496,19 @@ function openLesson(lesson) {
     });
 
 
-    lessonContent.appendChild(wrapper);
+    const content = document.createElement("div");
+    content.className = "lesson-content";
+    content.classList.add("show");
+    content.appendChild(wrapper);
+    card.appendChild(content);
+    card.classList.add("expanded");
+    activeCard = card;
 
-
-    lessonContent.classList.add("show");
-
-
-    setTimeout(() => {
-
-        lessonContent.scrollIntoView({
-
-            behavior: "smooth",
-
-            block: "start"
-
-        });
-
-    }, 100);
+    content.querySelector(".close-lesson").addEventListener("click", (event) => {
+        event.stopPropagation();
+        content.remove();
+        card.classList.remove("expanded");
+        activeCard = null;
+    });
 
 }
