@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAMMAR | Results</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <nav class="main-navbar" aria-label="Main navigation">
+        <h2>GRAMMAR</h2>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="Lessons.html">Lessons</a>
+            <a href="Exercises.html">Exercises</a>
+            <a href="Results.html" class="active">Results</a>
+            <a href="Settings.html">Settings ⚙</a>
+        </div>
+    </nav>
+
+    <main class="results-page">
+        <header class="results-header">
+            <p class="section-label">RESULTS</p>
+            <h1>Previous Results</h1>
+            <p class="results-description">Review your scores and the questions you need to practice.</p>
+            <button id="clearResultsButton" class="clear-results-btn" type="button">Clear Results</button>
+        </header>
+
+        <section id="resultsContainer" class="results-container" aria-live="polite"></section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="results.js"></script>
+</body>
+
+</html>
