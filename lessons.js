@@ -203,6 +203,12 @@ const lessons = [
 `
             },
 
+            {
+                type: "link",
+                title: "Detailed explanation",
+                url:"https://share.gemini.google/I98F5GNFQYkv"
+            },
+
         ]
     },
 
@@ -210,12 +216,12 @@ const lessons = [
     {
         id: 2,
 
-        title: "Parts of Speech",
+        title: "Unit 2",
 
-        subtitle: "Nouns, Verbs and more",
+        subtitle: "Reported Speech",
 
         thumbnail:
-            "Present Perfect .jpeg",
+            "Reported Speech .jpeg",
 
         content: [
 
@@ -223,37 +229,166 @@ const lessons = [
                 type: "image",
 
                 src:
-                    "images/lessons/lesson2/image1.jpg"
+                    "Reported Speech .jpg"
             },
 
 
-            {
+        {
                 type: "text",
 
-                title: "Parts of Speech",
+                title: "What is Grammar ?",
 
-                text:
-                    "Words in English are divided into different categories called parts of speech."
+                text: `#### 1. المفاهيم الأساسية (Basic Concepts)
+
+**Direct Speech (الكلام المباشر):**
+الجملة التي يقولها الشخص نفسه وتوضع بين أقواس "....".
+
+Example: Ahmed said, "I like pizza."
+
+**Indirect Speech (الكلام غير المباشر):**
+الجملة التي تُنقل على لسان شخص آخر، ولا توضع بين أقواس.
+
+Example: Ahmed said that he liked pizza.
+
+**Say:**
+فعل قول لا يتبعه مفعول.
+
+Example: She said that she was tired.
+
+**Tell:**
+فعل قول لا بد أن يتبعه مفعول (مخاطب).
+
+Example: She told me that she was tired.
+
+#### 2. خطوات تحويل الجملة الخبرية (Statement Transformation)
+
+عند التحويل من المباشر إلى غير المباشر، نتبع الخطوات التالية:
+
+**أولاً: تغيير فعل القول (Reporting Verb):**
+
+say → say
+says → says
+said → said
+
+say to → tell
+says to → tells
+said to → told
+
+**ثانياً: خطوات تحويل الجملة:**
+
+* حذف الأقواس وعلامات التنصيص.
+* الربط بكلمة **that**، وهي خطوة اختيارية ويمكن الاستغناء عنها.
+* تغيير الضمائر لتتناسب مع المتكلم والمخاطب.
+* تغيير الزمن للماضي إذا كان فعل القول خارج الأقواس في صيغة الماضي.
+
+Example: Ali said to me, "I will help you."
+→ Ali told me that he would help me.
+
+#### 3. تغيير الأزمنة (Tense Changes)
+
+إذا كان فعل القول ماضياً **(said / told)**، نُرجع زمن الجملة خطوة للوراء.
+
+**Present Simple → Past Simple**
+Example: "I play tennis." → He said he played tennis.
+
+**Present Continuous → Past Continuous**
+Example: "I am eating." → She said she was eating.
+
+**Present Perfect → Past Perfect**
+Example: "We have finished." → They said they had finished.
+
+**Past Simple → Past Perfect**
+Example: "I went to the park." → He said he had gone to the park.
+
+**will → would**
+**can → could**
+**must → had to**
+
+**أفعال لا تتغير:**
+could, would, should, might, ought to, used to, had better
+
+#### 4. تغيير تعبيرات الزمان والمكان (Time & Place Expressions)
+
+**now → then / at that time**
+
+**yesterday → the day before / the previous day**
+
+**tomorrow → the following day / the next day**
+
+**this → that**
+
+**these → those**
+
+**here → there**
+
+Example: "I will travel tomorrow."
+→ He said he would travel the next day.
+
+#### 5. الاستثناءات (Exceptions)
+
+لا يتغير زمن الجملة في الحالات التالية:
+
+**1. إذا كان فعل القول في المضارع (say / says):**
+
+Example: He says, "I am happy."
+→ He says that he is happy.
+
+**2. إذا كانت الجملة تعبر عن حقيقة علمية ثابتة:**
+
+Example: The teacher said, "Water boils at 100°C."
+→ The teacher said that water boils at 100°C.
+
+**3. إذا قيل الكلام منذ فترة قصيرة جداً:**
+
+مثل **just now** أو **a moment ago**.
+
+Example: He said just now, "I will call you."
+→ He said just now that he will call me.
+
+**4. مع حالات (If) الشرطية:**
+
+**First Conditional:** يتم تغييرها إلى الحالة الثانية.
+
+**Second Conditional:** لا يحدث تغيير في الزمن.
+
+**Third Conditional:** لا يحدث تغيير في الزمن.
+
+#### 6. أفعال القول المتقدمة (Advanced Reporting Verbs)
+
+لجعل لغتك أكثر احترافية، يمكن استخدام أفعال قول بديلة تعبر عن المعنى الدقيق بدلاً من **say** و **tell**.
+
+**المجموعة الأولى: Verb + that**
+
+agree, admit, complain, explain, deny
+
+Example: He explained that the traffic was bad.
+
+**المجموعة الثانية: Verb + object + that**
+
+assure, convince, remind, warn
+
+Example: She reminded me that we had a meeting.
+
+**المجموعة الثالثة: Verb + V-ing**
+
+accept, admit, deny, suggest
+
+Example: They suggested going to the beach.
+
+**المجموعة الرابعة: Verb + to + infinitive**
+
+advise, promise, refuse, offer
+
+Example: He promised to help me with my homework.
+`
             },
 
 
-            {
-                type: "text",
-
-                title: "Nouns",
-
-                text:
-                    "A noun is a word that names a person, place, thing, or idea."
-            },
-
-
-            {
-                type: "image",
-
-                src:
-                    "images/lessons/lesson2/image2.jpg"
+         {
+                type: "link",
+                title: "Detailed explanation",
+                url: "https://share.gemini.google/r6jCo9whiTnV"
             }
-
         ]
     },
 
@@ -261,12 +396,12 @@ const lessons = [
     {
         id: 3,
 
-        title: "Present Simple",
+        title: "Unit 3",
 
-        subtitle: "Learn the Present Simple tense",
+        subtitle: "Deduction , Advice and Regret",
 
         thumbnail:
-            "Present Perfect .jpeg",
+            "Deduction,Advice and Regret.jpeg",
 
         content: [
 
@@ -274,27 +409,130 @@ const lessons = [
                 type: "image",
 
                 src:
-                    "images/lessons/lesson3/image1.jpg"
+                    "Deduction,Advice and Regret.jpg"
             },
 
 
             {
                 type: "text",
 
-                title: "Present Simple",
+                title: "What is Grammar ?",
 
                 text:
-                    "We use the Present Simple to talk about habits, routines, facts, and things that happen regularly."
+                    `#### 1. Deduction (الاستنتاج)
+
+الاستنتاج يعني إننا بنحكم على شيء بناءً على دليل أو معلومات عندنا.
+
+#### Present Deduction (الاستنتاج في الحاضر)
+
+**Must + infinitive**
+
+نستخدمها لما نكون متأكدين بدرجة كبيرة إن الشيء صحيح.
+
+**Must + verb**
+
+Example:
+He is drinking a lot of water. He must be thirsty.
+He speaks English fluently. He must be British.
+
+المعنى: أكيد / لا بد أن.
+
+**Can't + infinitive**
+
+نستخدمها لما نكون متأكدين إن الشيء غير ممكن.
+
+**Can't + verb**
+
+Example:
+He can't be Egyptian; he doesn't speak Arabic.
+She got high marks. She can't be sad.
+
+المعنى: من المستحيل / لا يمكن أن.
+
+**Might + infinitive**
+
+نستخدمها لما يكون الشيء محتملًا لكننا غير متأكدين.
+
+**Might + verb**
+
+Example:
+The tourist might be French.
+My father might come early today.
+
+كلمات تدل عليها: maybe - perhaps - possibly - I'm not sure - I don't know.
+
+#### 2. Deduction in the Past (الاستنتاج في الماضي)
+
+لو بنتكلم عن شيء حدث بالفعل في الماضي نستخدم:
+
+**Must have + P.P.**
+
+نستخدمها عندما نكون متأكدين أن الشيء حدث في الماضي.
+
+Example:
+The criminal went to prison. He must have done something wrong.
+Arwa looks very happy. She must have passed the exam.
+
+المعنى: أكيد أنه فعل ذلك.
+
+**Can't have + P.P.**
+
+نستخدمها عندما نكون متأكدين أن الشيء لم يحدث في الماضي.
+
+Example:
+You can't have phoned me yesterday because I was at home all the time.
+It's only 4 o'clock. The match can't have finished already.
+
+**Might have + P.P.**
+
+نستخدمها لشيء ربما حدث في الماضي ولكننا غير متأكدين.
+
+Example:
+He might have won the gold medal.
+Mariam wasn't at school. She might have had a doctor's appointment.
+
+#### 3. Advice and Regret (النصيحة والندم)
+
+**Should have + P.P.**
+
+نستخدمها عندما كان من الأفضل أن نفعل شيئًا في الماضي ولكننا لم نفعله.
+
+Example:
+You missed the party. You should have come.
+
+المعنى: كان المفروض تيجي، لكنك لم تأتِ.
+
+**Should + infinitive:** نصيحة الآن.
+**Should have + P.P.:** نصيحة أو لوم على شيء في الماضي.
+
+Example:
+You look tired. You should go to bed.
+You went to bed very late. You should have gone to bed earlier.
+
+**Shouldn't have + P.P.**
+
+نستخدمها عندما كان من الأفضل ألا نفعل شيئًا في الماضي، لكننا فعلناه.
+
+Example:
+I'm feeling sick. I shouldn't have eaten so much.
+
+المعنى: كان المفروض ما آكلش الكمية دي، لكني أكلتها.
+
+**Could have + P.P.**
+
+نستخدمها للتعبير عن شيء كان ممكن يحصل في الماضي لكنه لم يحدث.
+
+Example:
+I went to school on foot, but I could have gone to school by car.
+
+المعنى: كان ممكن أروح بالعربية، لكني رحت مشيًا.`
             },
 
-
-            {
-                type: "image",
-
-                src:
-                    "images/lessons/lesson3/image2.jpg"
+ {
+                type: "link",
+                title: "Detailed explanation",
+                url: "https://share.gemini.google/7EOrpT7JyZ63"
             }
-
         ]
     }
 
@@ -376,6 +614,19 @@ function displayLessons() {
 
     });
 
+}
+
+
+function formatLessonText(text) {
+    if (!text.includes("####") && !text.includes("**")) {
+        return text;
+    }
+
+    return text
+        .replace(/^#### (.+)$/gm, "<h4>$1</h4>")
+        .replace(/^\* (.+)$/gm, "<div class=\"lesson-bullet\">$1</div>")
+        .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+        .replace(/\n/g, "<br>");
 }
 
 
@@ -492,14 +743,48 @@ function openLesson(lesson, card) {
                     ${item.title}
                 </h3>
 
-                <p>
-                    ${item.text}
-                </p>
+                <div class="lesson-text-body">
+                    ${formatLessonText(item.text)}
+                </div>
 
             `;
 
 
             wrapper.appendChild(textBlock);
+
+        }
+
+
+        /* LINK */
+
+        if (item.type === "link") {
+
+            const linkBlock =
+                document.createElement("div");
+
+
+            linkBlock.className =
+                "lesson-link";
+
+
+            linkBlock.innerHTML = `
+
+                <h3>
+                    ${item.title}
+                </h3>
+
+                <p>
+                    ${item.text}
+                </p>
+
+                <a href="${item.url}" target="_blank" rel="noopener noreferrer">
+                    Open Website &rarr;
+                </a>
+
+            `;
+
+
+            wrapper.appendChild(linkBlock);
 
         }
 
