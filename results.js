@@ -1,5 +1,4 @@
 const resultsContainer = document.getElementById("resultsContainer");
-const clearResultsButton = document.getElementById("clearResultsButton");
 const examResults = JSON.parse(localStorage.getItem("examResults") || "[]");
 
 function formatResultDate(dateString) {
@@ -14,11 +13,9 @@ function displayResults() {
                 <p>Complete an exam to see your results here.</p>
             </div>
         `;
-        clearResultsButton.disabled = true;
         return;
     }
 
-    clearResultsButton.disabled = false;
     resultsContainer.innerHTML = examResults.map((result, resultIndex) => `
         <article class="result-card">
             <div class="result-card-header">
@@ -48,13 +45,5 @@ function displayResults() {
         </article>
     `).join("");
 }
-
-clearResultsButton.addEventListener("click", () => {
-    if (!window.confirm("Clear all saved results?")) return;
-
-    localStorage.removeItem("examResults");
-    examResults.length = 0;
-    displayResults();
-});
 
 displayResults();
