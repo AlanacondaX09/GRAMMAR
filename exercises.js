@@ -150,8 +150,8 @@ const exercises = [
 	},
 	{
 		id: 3,
-		icon: "🧠",
-		title: "Mixed Grammar Test",
+		icon: "📝",
+		title: "Test on unit 1,2",
 		description: "A complete mixed grammar test covering different grammar topics.",
 		minutes: 15,
 		questionCount: 20,
