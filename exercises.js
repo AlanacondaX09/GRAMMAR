@@ -162,7 +162,7 @@ const exercises = [
 const exercisesContainer = document.getElementById("exercisesContainer");
 let activeExam = null;
 let examTimer = null;
-const maxExamAttempts = 2;
+const maxExamAttempts =1;
 const examResults = JSON.parse(localStorage.getItem("examResults") || "[]");
 const examAttempts = JSON.parse(localStorage.getItem("examAttempts") || "{}");
 
