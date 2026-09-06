@@ -150,8 +150,8 @@ const exercises = [
 	},
 	{
 		id: 3,
-		icon: "📝",
-		title: "Test on unit 1,2",
+		icon: "🧠",
+		title: "Mixed Grammar Test",
 		description: "A complete mixed grammar test covering different grammar topics.",
 		minutes: 15,
 		questionCount: 20,
@@ -162,7 +162,7 @@ const exercises = [
 const exercisesContainer = document.getElementById("exercisesContainer");
 let activeExam = null;
 let examTimer = null;
-const maxExamAttempts =1;
+const maxExamAttempts = 1; // Change this number to set the allowed attempts.
 const examResults = JSON.parse(localStorage.getItem("examResults") || "[]");
 const examAttempts = JSON.parse(localStorage.getItem("examAttempts") || "{}");
 
@@ -285,6 +285,7 @@ function renderQuestion(container) {
 	const questionNumber = activeExam.currentQuestion + 1;
 	const totalQuestions = activeExam.exercise.questions.length;
 	const selectedAnswer = activeExam.answers[activeExam.currentQuestion];
+	const allQuestionsAnswered = activeExam.answers.filter((answer) => answer !== undefined).length === totalQuestions;
 
 	container.innerHTML = `
 		<div class="exam-header">
@@ -302,6 +303,17 @@ function renderQuestion(container) {
 			max="${totalQuestions}"
 			aria-label="Exam progress"
 		></progress>
+
+		<nav class="question-navigator" aria-label="Choose a question">
+			${activeExam.exercise.questions.map((_, index) => `
+				<button
+					class="question-number-btn${index === activeExam.currentQuestion ? " is-current" : ""}${activeExam.answers[index] !== undefined ? " is-answered" : ""}"
+					type="button"
+					aria-label="Go to question ${index + 1}"
+					aria-current="${index === activeExam.currentQuestion ? "step" : "false"}"
+				>${index + 1}</button>
+			`).join("")}
+		</nav>
 
 		<div class="exam-question">
 			<h2>${question.text}</h2>
@@ -323,15 +335,26 @@ function renderQuestion(container) {
 		<div class="exam-actions">
 			<button class="previous-question-btn" type="button">Previous</button>
 			${questionNumber === totalQuestions
-				? "<button class=\"submit-exam-btn\" type=\"button\">Submit Exam</button>"
+				? `<button class="submit-exam-btn" type="button"${allQuestionsAnswered ? "" : " disabled"}>Submit Exam</button>`
 				: "<button class=\"next-question-btn\" type=\"button\">Next</button>"
 				}
 		</div>
+		${questionNumber === totalQuestions && !allQuestionsAnswered
+			? '<p class="exam-validation-message" role="status">Please answer every question before submitting.</p>'
+			: ""}
 	`;
 
 	container.querySelectorAll(`input[name='question-${questionNumber}']`).forEach((input) => {
 		input.addEventListener("change", () => {
 			activeExam.answers[activeExam.currentQuestion] = Number(input.value);
+		});
+	});
+
+	container.querySelectorAll(".question-number-btn").forEach((button, index) => {
+		button.addEventListener("click", () => {
+			window.playSound?.(550);
+			activeExam.currentQuestion = index;
+			renderQuestion(container);
 		});
 	});
 
@@ -369,6 +392,10 @@ function previousQuestion() {
 
 function finishExam() {
 	if (!activeExam) return;
+
+	const allQuestionsAnswered = activeExam.answers.filter((answer) => answer !== undefined).length
+		=== activeExam.exercise.questions.length;
+	if (!allQuestionsAnswered) return;
 
 	clearInterval(examTimer);
 
