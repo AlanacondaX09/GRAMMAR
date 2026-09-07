@@ -123,36 +123,22 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+
     <!-- PWA Service Worker -->
     <script>
-
         if ("serviceWorker" in navigator) {
-
             window.addEventListener("load", () => {
-
                 navigator.serviceWorker
-                    .register("./sw.js")
-
-                    .then((registration) => {
-
-                        console.log(
-                            "GRAMMAR PWA Ready 🚀",
-                            registration
-                        );
-
+                    .register("./sw.js", {
+                        updateViaCache: "none"
                     })
-
+                    .then((registration) => {
+                        console.log("GRAMMAR PWA Ready 🚀", registration);
+                    })
                     .catch((error) => {
-
-                        console.error(
-                            "GRAMMAR PWA Error:",
-                            error
-                        );
-
+                        console.error("GRAMMAR PWA Error:", error);
                     });
-
             });
-
         }
     </script>
 </body>
