@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     dark: "داكن",
                     about: "عن GRAMMAR",
                     version: "الإصدار",
-                    madeWith: "صُنع بـ AlanacondaX09 🐍"
+                    madeWith: "صُنع بـ AlanacondaX09 ❤️"
                 }
             };
 
