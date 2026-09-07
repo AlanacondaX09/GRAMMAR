@@ -1,4 +1,4 @@
-const CACHE_NAME = "grammar-v3";
+const CACHE_NAME = "grammar-v4";
 const SHOW_UPDATE_NOTICE = false;
 
 const FILES_TO_CACHE = [
