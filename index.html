@@ -16,7 +16,7 @@
     <link rel="manifest" href="./manifest.json">
 
     <!-- PWA Theme -->
-    <meta name="theme-color" content="#7C3AED">
+    <meta name="theme-color" content="#39B54A">
 
     <!-- Mobile PWA -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -39,11 +39,6 @@
 </head>
 
 <body>
-
-    <div id="updateNotice" class="update-notice" role="status" aria-live="polite" hidden>
-        <span>تحديث جديد متاح</span>
-        <button id="updateButton" type="button">تحديث التطبيق</button>
-    </div>
 
     <!-- ================= SPLASH SCREEN ================= -->
 
@@ -145,60 +140,9 @@
             window.addEventListener("load", () => {
 
                 navigator.serviceWorker
-                    .register("./sw.js", { updateViaCache: "none" })
+                    .register("./sw.js")
 
                     .then((registration) => {
-
-                        registration.update();
-
-                        let updateNoticeShown = false;
-
-                        const showUpdateNotice = () => {
-                            const updateNotice = document.getElementById("updateNotice");
-                            const updateButton = document.getElementById("updateButton");
-
-                            if (updateNoticeShown || !registration.waiting || !updateNotice || !updateButton) return;
-
-                            const channel = new MessageChannel();
-                            const timeoutId = setTimeout(() => channel.port1.close(), 1000);
-
-                            channel.port1.onmessage = ({ data }) => {
-                                clearTimeout(timeoutId);
-                                channel.port1.close();
-
-                                if (data?.showNotice !== true) return;
-
-                                updateNoticeShown = true;
-                                updateNotice.hidden = false;
-                                updateButton.addEventListener("click", () => {
-                                    navigator.serviceWorker.addEventListener(
-                                        "controllerchange",
-                                        () => window.location.reload(),
-                                        { once: true }
-                                    );
-                                    registration.waiting.postMessage({ type: "SKIP_WAITING" });
-                                }, { once: true });
-                            };
-
-                            registration.waiting.postMessage(
-                                { type: "GET_UPDATE_INFO" },
-                                [channel.port2]
-                            );
-                        };
-
-                        if (registration.waiting) {
-                            showUpdateNotice();
-                        }
-
-                        registration.addEventListener("updatefound", () => {
-                            const newWorker = registration.installing;
-
-                            newWorker?.addEventListener("statechange", () => {
-                                if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
-                                    showUpdateNotice();
-                                }
-                            });
-                        });
 
                         console.log(
                             "GRAMMAR PWA Ready 🚀",
