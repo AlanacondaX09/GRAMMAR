@@ -1,13 +1,25 @@
-const CACHE_NAME = "grammar-v1";
+const CACHE_NAME = "grammar-v3";
+const SHOW_UPDATE_NOTICE = false;
 
 const FILES_TO_CACHE = [
     "./",
     "./index.html",
+    "./Lessons.html",
+    "./Exercises.html",
+    "./Results.html",
+    "./Settings.html",
     "./Style.css",
     "./script.js",
+    "./lessons.js",
+    "./exercises.js",
+    "./results.js",
     "./manifest.json",
-    "./icons/icon-192(1).png",
-    "./icons/icon-512(1).png"
+    "./icon/icon-192.png",
+    "./icon/icon-512.png",
+    "./Present Perfect .jpeg",
+    "./Present Perfect Continuous .jpeg",
+    "./Reported Speech .jpeg",
+    "./Deduction,Advice and Regret.jpeg"
 ];
 
 self.addEventListener("install", (event) => {
@@ -18,7 +30,19 @@ self.addEventListener("install", (event) => {
             })
     );
 
-    self.skipWaiting();
+});
+
+self.addEventListener("message", (event) => {
+    if (event.data?.type === "GET_UPDATE_INFO") {
+        event.ports[0]?.postMessage({
+            showNotice: SHOW_UPDATE_NOTICE
+        });
+        return;
+    }
+
+    if (event.data?.type === "SKIP_WAITING") {
+        self.skipWaiting();
+    }
 });
 
 self.addEventListener("activate", (event) => {
@@ -36,10 +60,23 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
+    if (event.request.method !== "GET" ||
+        new URL(event.request.url).origin !== self.location.origin) {
+        return;
+    }
+
     event.respondWith(
-        caches.match(event.request)
-            .then((cachedResponse) => {
-                return cachedResponse || fetch(event.request);
+        fetch(event.request, { cache: "no-store" })
+            .then((response) => {
+                if (response.ok) {
+                    const responseCopy = response.clone();
+                    caches.open(CACHE_NAME).then((cache) => {
+                        cache.put(event.request, responseCopy);
+                    });
+                }
+
+                return response;
             })
+            .catch(() => caches.match(event.request))
     );
 });
