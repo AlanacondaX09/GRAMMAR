@@ -1,0 +1,104 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sign In | GRAMMAR</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../Style.css">
+
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json">
+
+    <meta name="theme-color" content="#39B54A">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="./icon-192.png">
+
+    <link rel="apple-touch-icon"
+          href="./icon-192.png">
+</head>
+
+<body>
+
+    <!-- ================= LOGIN PAGE ================= -->
+
+    <main class="auth-page">
+
+        <div class="auth-shell">
+
+            <section class="auth-brand">
+
+                <div class="auth-mark" aria-hidden="true">G</div>
+
+                <p class="section-label">WELCOME BACK</p>
+
+                <h1>
+                    Learn Grammar.<br>
+                    <span>Master English.</span>
+                </h1>
+
+                <p class="auth-brand-description">
+                    Continue your English learning journey with GRAMMAR.
+                </p>
+
+            </section>
+
+            <section class="auth-card" aria-labelledby="loginTitle">
+
+            <div class="auth-heading">
+                <p class="section-label">YOUR ACCOUNT</p>
+                <h2 id="loginTitle">Sign in to GRAMMAR</h2>
+                <p>Use your Google account to continue.</p>
+            </div>
+
+            <!-- Google Login -->
+                <button id="googleLogin" class="auth-google" type="button">
+
+                <span class="google-icon">
+                    G
+                </span>
+
+                <span>
+                    Continue with Google
+                </span>
+
+            </button>
+
+            <!-- Loading -->
+                <p id="loginStatus" class="auth-message" role="status" aria-live="polite"></p>
+
+            <!-- Quote -->
+            <blockquote class="login-verse" lang="ar" dir="rtl">
+
+                وَأَنْ لَيْسَ لِلإِنسَانِ إِلَّا مَا سَعَى ۝
+                وَأَنَّ سَعْيَهُ سَوْفَ يُرَى ۝
+
+            </blockquote>
+
+            <p class="auth-footer">Alanaconda.GRAMMAR</p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="../script.js"></script>
+
+    <!-- Firebase Authentication -->
+    <script type="module" src="../auth.js"></script>
+    <script type="module" src="auth.js"></script>
+</body>
+
+</html>
+```
