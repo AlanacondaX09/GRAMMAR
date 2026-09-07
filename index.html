@@ -126,20 +126,20 @@
 
     <!-- PWA Service Worker -->
     <script>
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", () => {
-                navigator.serviceWorker
-                    .register("./sw.js", {
-                        updateViaCache: "none"
-                    })
-                    .then((registration) => {
-                        console.log("GRAMMAR PWA Ready 🚀", registration);
-                    })
-                    .catch((error) => {
-                        console.error("GRAMMAR PWA Error:", error);
-                    });
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker
+            .register("./sw.js", {
+                updateViaCache: "none"
+            })
+            .then((registration) => {
+                console.log("GRAMMAR PWA Ready 🚀", registration);
+            })
+            .catch((error) => {
+                console.error("GRAMMAR PWA Error:", error);
             });
-        }
+    });
+}
     </script>
 </body>
 
