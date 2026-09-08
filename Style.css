@@ -34,41 +34,6 @@ body {
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-.update-notice {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1rem;
-    color: #fff;
-    background: #176b2b;
-    border: 1px solid #39b54a;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
-}
-
-.update-notice button {
-    padding: 0.45rem 0.7rem;
-    color: #176b2b;
-    background: #fff;
-    border: 0;
-    border-radius: 0.35rem;
-    cursor: pointer;
-    font: inherit;
-    font-weight: 700;
-}
-
-@media (max-width: 520px) {
-    .update-notice {
-        left: 1rem;
-        right: 1rem;
-        justify-content: space-between;
-    }
-}
-
 nav {
     border-bottom-color: var(--border);
 }
@@ -402,7 +367,7 @@ button:hover,
    MOBILE
 ===================== */
 
-@media (max-width: 768px) {
+@media (max-width: 760px) {
 
     nav {
         height: auto;
@@ -734,7 +699,7 @@ button:hover,
     transform: translateY(-2px) scale(1.05);
 }
 
-.main-navbar .nav-links .logout-link {
+.main-navbar .nav-links .login-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -749,14 +714,14 @@ button:hover,
     transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
 }
 
-.main-navbar .nav-links .logout-link svg {
+.main-navbar .nav-links .login-link svg {
     width: 22px;
     height: 22px;
     fill: currentColor;
 }
 
-.main-navbar .nav-links .logout-link:hover,
-.main-navbar .nav-links .logout-link:focus-visible {
+.main-navbar .nav-links .login-link:hover,
+.main-navbar .nav-links .login-link:focus-visible {
     color: #ffffff !important;
     background-color: #39b54a;
     transform: translateY(-2px) scale(1.05);
@@ -777,7 +742,7 @@ button:hover,
         height: 34px;
     }
 
-    .main-navbar .nav-links .logout-link {
+    .main-navbar .nav-links .login-link {
         width: 34px;
         height: 34px;
     }
@@ -2272,4 +2237,407 @@ html[data-theme="light"] {
 
     }
 
+}
+
+/* =========================================================
+   GRAMMAR — ORGANIC BLURRY GLASS RESPONSIVE UI
+   Added as an override layer so the original styling stays intact.
+========================================================= */
+
+:root {
+    --glass-bg: rgba(12, 16, 22, 0.48);
+    --glass-bg-strong: rgba(10, 14, 20, 0.68);
+    --glass-border: rgba(255, 255, 255, 0.13);
+    --glass-highlight: rgba(255, 255, 255, 0.08);
+    --glass-blur: 18px;
+    --site-bg-image: none; /* replace with: url("your-sea-image.jpg") */
+}
+
+/* Dedicated atmospheric background */
+body {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(124, 58, 237, 0.18), transparent 32%),
+        radial-gradient(circle at 85% 75%, rgba(0, 140, 255, 0.13), transparent 30%),
+        linear-gradient(rgba(5, 8, 13, 0.58), rgba(5, 8, 13, 0.76)),
+        var(--site-bg-image),
+        #08080d;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* When a real landscape photo is supplied, the image becomes the visual layer. */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+        linear-gradient(180deg, rgba(5, 8, 13, 0.30), rgba(5, 8, 13, 0.72)),
+        var(--site-bg-image);
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    transform: scale(1.02);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.10), transparent 42%),
+        linear-gradient(90deg, rgba(0,0,0,.12), transparent 45%, rgba(0,0,0,.16));
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.main-navbar,
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    min-height: 72px;
+    height: auto;
+    padding: 14px 28px;
+    border: 1px solid var(--glass-border);
+    border-top: 0;
+    border-radius: 0 0 22px 22px;
+    background: var(--glass-bg-strong);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(var(--glass-blur)) saturate(135%);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(135%);
+}
+
+.main-navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    gap: 20px;
+}
+
+.main-navbar h2,
+nav h2 {
+    margin: 0;
+    color: #39b54a !important;
+    font-size: 25px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 18px rgba(57,181,74,.25);
+}
+
+.main-navbar .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+.main-navbar .nav-links a,
+.nav-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 9px 13px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow: none;
+    transition: .25s ease;
+}
+
+.main-navbar .nav-links a:hover,
+.main-navbar .nav-links a.active,
+.nav-links a:hover {
+    color: #fff !important;
+    border-color: rgba(57,181,74,.35);
+    background: rgba(57,181,74,.12);
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   ORGANIC GLASS CARDS
+========================================================= */
+
+.lesson-card,
+.exercise-card,
+.settings-card,
+.lesson-content,
+.lesson-link,
+.exam-container,
+.question-navigator,
+.auth-card {
+    border: 1px solid var(--glass-border) !important;
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.085),
+        rgba(255,255,255,.025)
+    ) !important;
+    box-shadow:
+        inset 0 1px 0 var(--glass-highlight),
+        0 18px 55px rgba(0,0,0,.22);
+    backdrop-filter: blur(var(--glass-blur)) saturate(130%);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(130%);
+}
+
+.lesson-card,
+.exercise-card,
+.settings-card {
+    border-radius: 24px !important;
+}
+
+.lesson-card:hover,
+.exercise-card:hover {
+    border-color: rgba(57,181,74,.42) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.10),
+        0 20px 55px rgba(0,0,0,.30),
+        0 0 28px rgba(57,181,74,.07);
+}
+
+.lesson-card img {
+    border-radius: 18px;
+    filter: saturate(.92);
+}
+
+/* =========================================================
+   PAGE CONTENT
+========================================================= */
+
+.lessons-page,
+.exercises-page,
+.settings-page {
+    margin-top: 48px;
+}
+
+.hero {
+    padding-top: 70px;
+}
+
+.description,
+.lessons-description,
+.exercises-description,
+.settings-header p,
+.lesson-card p,
+.lesson-text p,
+.exercise-info p {
+    color: rgba(255,255,255,.70);
+}
+
+/* =========================================================
+   MOBILE — TOP BAR + BOTTOM BAR
+========================================================= */
+
+@media (max-width: 760px) {
+
+    body {
+        padding-bottom: 82px;
+        background-attachment: scroll;
+    }
+
+    .main-navbar,
+    nav {
+        position: sticky;
+        top: 0;
+        min-height: 60px;
+        height: 60px;
+        padding: 8px 14px;
+        border-radius: 0 0 18px 18px;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .main-navbar h2,
+    nav h2 {
+        font-size: 17px;
+        letter-spacing: 2px;
+    }
+
+    /* Bottom navigation */
+    .main-navbar .nav-links,
+    nav .nav-links {
+        position: fixed;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        z-index: 2000;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 4px;
+
+        min-height: 64px;
+        padding: 7px;
+
+        border: 1px solid var(--glass-border);
+        border-radius: 22px;
+
+        background: rgba(9, 12, 18, .76);
+        box-shadow:
+            0 16px 45px rgba(0,0,0,.42),
+            inset 0 1px 0 rgba(255,255,255,.08);
+
+        backdrop-filter: blur(22px) saturate(140%);
+        -webkit-backdrop-filter: blur(22px) saturate(140%);
+    }
+
+    .main-navbar .nav-links a,
+    nav .nav-links a {
+        flex: 1;
+        min-width: 0;
+        min-height: 50px;
+        padding: 7px 4px;
+        border-radius: 16px;
+        font-size: 10px;
+        line-height: 1.1;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .main-navbar .nav-links a:hover,
+    .main-navbar .nav-links a.active,
+    nav .nav-links a:hover {
+        transform: none;
+    }
+
+    /* Keep external WhatsApp icon compact if present */
+    .main-navbar .nav-links .whatsapp-link,
+    .main-navbar .nav-links .login-link {
+        flex: 0 0 42px;
+        width: 42px;
+        height: 42px;
+        min-height: 42px;
+        padding: 0;
+    }
+
+    .lessons-page,
+    .exercises-page,
+    .settings-page {
+        width: 92%;
+        margin-top: 30px;
+        padding-bottom: 25px;
+    }
+
+    .lessons-container,
+    .exercises-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 20px 0;
+    }
+
+    .lesson-card,
+    .exercise-card,
+    .settings-card {
+        border-radius: 21px !important;
+    }
+
+    .lesson-card.is-open,
+    .exercise-card.is-open {
+        grid-column: auto;
+    }
+
+    .hero {
+        padding: 45px 7% 25px;
+    }
+
+    h1 {
+        font-size: clamp(38px, 12vw, 52px);
+    }
+}
+
+/* =========================================================
+   LANDSCAPE / LARGE SCREEN — SIDE BAR + TOP BAR
+========================================================= */
+
+@media (min-width: 761px) {
+
+    body {
+        padding-left: 92px;
+    }
+
+    .main-navbar,
+    nav {
+        position: sticky;
+        top: 0;
+        margin-left: -92px;
+        padding-left: 120px;
+    }
+
+    /* Side navigation */
+    .main-navbar .nav-links,
+    nav .nav-links {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1500;
+
+        width: 92px;
+        padding: 88px 10px 18px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 8px;
+
+        border-right: 1px solid var(--glass-border);
+        background: rgba(8, 11, 17, .68);
+
+        backdrop-filter: blur(22px) saturate(135%);
+        -webkit-backdrop-filter: blur(22px) saturate(135%);
+        box-shadow: 12px 0 35px rgba(0,0,0,.16);
+    }
+
+    .main-navbar .nav-links a,
+    nav .nav-links a {
+        width: 100%;
+        min-height: 58px;
+        padding: 8px 5px;
+        border-radius: 17px;
+        font-size: 11px;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .main-navbar .nav-links a:hover,
+    .main-navbar .nav-links a.active,
+    nav .nav-links a:hover {
+        transform: translateX(2px);
+    }
+
+    .main-navbar .nav-links .whatsapp-link,
+    .main-navbar .nav-links .login-link {
+        width: 48px;
+        height: 48px;
+        min-height: 48px;
+        margin: 4px auto;
+    }
+}
+
+/* =========================================================
+   ACCESSIBILITY / REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
 }
