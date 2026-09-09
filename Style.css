@@ -829,292 +829,6 @@ nav h2,
     cursor: pointer;
 }
 
-/* AUTH PAGE */
-.auth-page {
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-    position: relative;
-    padding: 56px 7%;
-    overflow: hidden;
-    background:
-        linear-gradient(135deg, var(--background) 0%, var(--auth-background-mid) 52%, var(--background) 100%);
-}
-
-:root {
-    --auth-background-mid: #0d1512;
-}
-
-html[data-theme="light"] {
-    --auth-background-mid: #e8f4eb;
-}
-
-.auth-page::before,
-.auth-page::after {
-    content: "";
-    position: absolute;
-    width: 360px;
-    height: 360px;
-    border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.auth-page::before {
-    top: -190px;
-    right: -100px;
-}
-
-.auth-page::after {
-    bottom: -240px;
-    left: -120px;
-    border-color: color-mix(in srgb, var(--accent) 16%, transparent);
-}
-
-.auth-shell {
-    position: relative;
-    z-index: 1;
-    width: min(1050px, 100%);
-    display: grid;
-    grid-template-columns: 1.1fr minmax(320px, 430px);
-    gap: 64px;
-    align-items: center;
-}
-
-.section-label {
-    color: var(--accent);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 3px;
-}
-
-.auth-mark {
-    display: grid;
-    place-items: center;
-    width: 58px;
-    height: 58px;
-    margin-bottom: 24px;
-    border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
-    border-radius: 16px;
-    background: color-mix(in srgb, var(--accent) 8%, transparent);
-    box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 4%, transparent);
-    color: var(--accent);
-    font-size: 28px;
-    font-weight: 900;
-}
-
-.auth-brand h1 {
-    margin-top: 18px;
-    font-size: clamp(42px, 6vw, 74px);
-}
-
-.auth-brand h1 span {
-    color: var(--accent);
-}
-
-.auth-brand-description {
-    max-width: 430px;
-    margin-top: 24px;
-    color: var(--muted);
-    font-size: 17px;
-    line-height: 1.7;
-}
-
-.auth-card {
-    padding: 38px;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    background: color-mix(in srgb, var(--card) 92%, transparent);
-    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.36);
-    backdrop-filter: blur(14px);
-}
-
-.auth-heading h2 {
-    margin: 10px 0 8px;
-    font-size: clamp(26px, 4vw, 34px);
-    line-height: 1.15;
-}
-
-.auth-heading p:last-child,
-.user-panel p {
-    color: var(--muted);
-}
-
-.auth-card form {
-    display: grid;
-    gap: 16px;
-    margin-top: 26px;
-}
-
-.auth-card label {
-    display: grid;
-    gap: 8px;
-    color: var(--text);
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.auth-card input {
-    width: 100%;
-    padding: 13px 14px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    outline: none;
-    background: var(--background);
-    color: var(--text);
-    font: inherit;
-}
-
-.auth-card input:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent);
-}
-
-.auth-primary,
-.auth-google {
-    width: 100%;
-}
-
-.auth-primary {
-    margin-top: 4px;
-}
-
-.auth-google {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    min-height: 52px;
-    margin-top: 28px;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background: #fff;
-    color: #171717;
-    font-size: 15px;
-    font-weight: 800;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.google-icon {
-    display: grid;
-    place-items: center;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    color: #4285f4;
-    font-family: Georgia, serif;
-    font-size: 21px;
-    font-weight: 700;
-}
-
-.auth-google:hover {
-    border-color: var(--accent);
-    box-shadow: 0 10px 24px color-mix(in srgb, var(--accent) 18%, transparent);
-    transform: translateY(-2px);
-}
-
-.auth-google:focus-visible {
-    outline: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
-    outline-offset: 3px;
-}
-
-.auth-divider {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 22px 0;
-    color: var(--muted);
-    font-size: 13px;
-}
-
-.auth-divider::before,
-.auth-divider::after {
-    content: "";
-    height: 1px;
-    flex: 1;
-    background: var(--border);
-}
-
-.auth-switch {
-    display: block;
-    width: 100%;
-    margin-top: 18px;
-    padding: 0;
-    background: transparent;
-    color: var(--accent);
-    font-size: 14px;
-}
-
-.auth-switch:hover {
-    transform: none;
-    box-shadow: none;
-    color: var(--accent);
-}
-
-.auth-message {
-    margin-top: 16px;
-    color: #ff7979;
-    font-size: 13px;
-    line-height: 1.5;
-}
-
-.login-verse {
-    margin: 28px 0 0;
-    padding-top: 22px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 2;
-    text-align: center;
-}
-
-.auth-message[data-type="success"] {
-    color: var(--accent);
-}
-
-.auth-footer {
-    margin-top: 24px;
-    color: var(--muted);
-    font-size: 12px;
-    text-align: center;
-}
-
-.user-panel {
-    margin-top: 24px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-    text-align: center;
-}
-
-.user-panel strong {
-    display: block;
-    margin-top: 6px;
-    overflow-wrap: anywhere;
-}
-
-@media (max-width: 760px) {
-    .auth-page {
-        padding: 32px 6%;
-    }
-
-    .auth-shell {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .auth-brand h1 {
-        font-size: 42px;
-    }
-
-    .auth-card {
-        padding: 24px;
-    }
-
-    .auth-brand-description {
-        margin-top: 18px;
-        font-size: 15px;
-    }
-}
 
 .lesson-image {
     display: block;
@@ -1497,24 +1211,36 @@ html[data-theme="light"] {
 .question-navigator {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 22px;
-    padding: 12px;
+    gap: 5px;
+
+    margin-top: 18px;
+    margin-bottom: 35px;
+
+    padding: 8px;
+
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
+    border-radius: 10px;
+
     background: rgba(255, 255, 255, 0.03);
 }
 
 .question-number-btn {
-    min-width: 38px;
-    height: 38px;
-    padding: 0 8px;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 8px;
+    min-width: 33px;
+    width: 33px;
+    height: 33px;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 7px;
+
     background: transparent;
     color: #999;
+
     font: inherit;
+    font-size: 13px;
     font-weight: 700;
+
     cursor: pointer;
 }
 
@@ -1533,12 +1259,43 @@ html[data-theme="light"] {
     box-shadow: 0 0 0 2px rgba(57, 192, 82, 0.2);
 }
 
+
+/* رأس السؤال */
 .exam-question h2 {
-    margin: 28px 0 20px;
+    margin: 0 0 22px !important;
     color: #ddd;
     font-size: 24px;
+    line-height: 1.6;
 }
 
+
+/* الموبايل */
+@media (max-width: 600px) {
+
+    .question-navigator {
+        gap: 4px;
+        padding: 7px;
+        margin-top: 15px;
+        margin-bottom: 35px !important;
+    }
+
+    .question-number-btn {
+        min-width: 29px;
+        width: 29px;
+        height: 29px;
+
+        font-size: 12px;
+        border-radius: 6px;
+    }
+
+    .exam-question h2 {
+        margin-top: 0 !important;
+        margin-bottom: 20px !important;
+
+        font-size: 20px;
+        line-height: 1.65;
+    }
+}
 .answer-options {
     display: grid;
     gap: 12px;
