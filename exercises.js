@@ -146,7 +146,278 @@ const exercises = [
 		description: "Test your knowledge of Unit 2 concepts.",
 		minutes: 15,
 		questionCount: 20,
-		questions: []
+		questions: [
+
+    // =========================
+    // SYNONYMS
+    // =========================
+
+    {
+        type: "synonym",
+        text: "Good planning improves efficiency in any busy workplace. The synonym of \"efficiency\" is ______.",
+        options: [
+            "delay",
+            "success",
+            "effectiveness",
+            "noise"
+        ],
+        correctAnswer: 2
+    },
+
+    {
+        type: "synonym",
+        text: "The traffic came to a standstill after the accident. The synonym of \"standstill\" is ______.",
+        options: [
+            "speed",
+            "stop",
+            "movement",
+            "race"
+        ],
+        correctAnswer: 1
+    },
+
+
+    // =========================
+    // ANTONYMS
+    // =========================
+
+    {
+        type: "antonym",
+        text: "The answer was not instant because the problem was difficult. The antonym of \"instant\" is ______.",
+        options: [
+            "immediate",
+            "sudden",
+            "delayed",
+            "quick"
+        ],
+        correctAnswer: 2
+    },
+
+    {
+        type: "antonym",
+        text: "The patient started treatment and became better. The antonym of \"treatment\" is ______.",
+        options: [
+            "cure",
+            "medicine",
+            "neglect",
+            "care"
+        ],
+        correctAnswer: 2
+    },
+
+
+    // =========================
+    // VOCABULARY
+    // =========================
+
+    {
+        type: "vocabulary",
+        text: "We bought some ______ tools to repair things in the kitchen.",
+        options: [
+            "household",
+            "house",
+            "housing",
+            "housed"
+        ],
+        correctAnswer: 0
+    },
+
+    {
+        type: "vocabulary",
+        text: "The factory can ______ many useful machines every month.",
+        options: [
+            "production",
+            "produce",
+            "producer",
+            "productive"
+        ],
+        correctAnswer: 1
+    },
+
+    {
+        type: "vocabulary",
+        text: "Good ______ keeps food fresh and safe for a long time.",
+        options: [
+            "package",
+            "packaging",
+            "packed",
+            "pack"
+        ],
+        correctAnswer: 1
+    },
+
+    {
+        type: "vocabulary",
+        text: "My grandmother keeps many ______ tools at home.",
+        options: [
+            "domestic",
+            "outdoor",
+            "foreign",
+            "modern"
+        ],
+        correctAnswer: 0
+    },
+
+    {
+        type: "vocabulary",
+        text: "Please ______ your clothes before leaving for the trip.",
+        options: [
+            "package",
+            "packing",
+            "packed",
+            "pack"
+        ],
+        correctAnswer: 3
+    },
+
+
+    // =========================
+    // WORD FORMATION
+    // =========================
+
+    {
+        type: "word-formation",
+        text: "The company increased car ______ after buying modern machines.",
+        options: [
+            "produce",
+            "productive",
+            "production",
+            "producing"
+        ],
+        correctAnswer: 2
+    },
+
+    {
+        type: "word-formation",
+        text: "The mask of gold is a very beautiful ______.",
+        options: [
+            "create",
+            "creator",
+            "creation",
+            "creative"
+        ],
+        correctAnswer: 2
+    },
+
+
+    // =========================
+    // GRAMMAR
+    // =========================
+
+    {
+        type: "grammar",
+        text: "If I ______ enough money, I would buy a new laptop.",
+        options: [
+            "have",
+            "had",
+            "will have",
+            "has"
+        ],
+        correctAnswer: 1
+    },
+
+    {
+        type: "grammar",
+        text: "By the time we arrived, the film ______.",
+        options: [
+            "started",
+            "has started",
+            "had started",
+            "starts"
+        ],
+        correctAnswer: 2
+    },
+
+    {
+        type: "grammar",
+        text: "Ahmed ______ his homework when his friend called him.",
+        options: [
+            "did",
+            "was doing",
+            "has done",
+            "does"
+        ],
+        correctAnswer: 1
+    },
+
+    {
+        type: "grammar",
+        text: "The report ______ by the manager yesterday.",
+        options: [
+            "wrote",
+            "was written",
+            "is written",
+            "writes"
+        ],
+        correctAnswer: 1
+    },
+
+    {
+        type: "grammar",
+        text: "She asked me where I ______ the day before.",
+        options: [
+            "go",
+            "went",
+            "had gone",
+            "have gone"
+        ],
+        correctAnswer: 2
+    },
+
+    {
+        type: "grammar",
+        text: "He has lived here ______ ten years.",
+        options: [
+            "since",
+            "for",
+            "ago",
+            "from"
+        ],
+        correctAnswer: 1
+    },
+
+    {
+        type: "grammar",
+        text: "If she studies hard, she ______ the exam.",
+        options: [
+            "pass",
+            "passed",
+            "will pass",
+            "passing"
+        ],
+        correctAnswer: 2
+    },
+
+    {
+        type: "grammar",
+        text: "I wish I ______ taller.",
+        options: [
+            "am",
+            "were",
+            "was",
+            "be"
+        ],
+        correctAnswer: 1
+    },
+
+
+    // =========================
+    // MIXED
+    // =========================
+
+    {
+        type: "vocabulary",
+        text: "Many students struggle with difficult grammar rules at first. The synonym of \"struggle\" is ______.",
+        options: [
+            "succeed",
+            "fight",
+            "relax",
+            "stop"
+        ],
+        correctAnswer: 1
+    }
+
+]
 	},
 	{
 		id: 3,
